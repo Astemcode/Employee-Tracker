@@ -28,11 +28,10 @@ Joivre Charles
 - A test of regression was completed.
 
 ## License Used in this project
-- Apache-2.0
-
+- MIT
 
 ## Badges
-![GitHub license](https://img.shields.io/badge/license-Apache-2.0-blue.svg)
+![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
 
 ## Questions
 * Please direct Questions to the following
