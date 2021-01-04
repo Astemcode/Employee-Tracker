@@ -25,7 +25,7 @@ Joivre Charles
 
 ## Tests
 - Here is a description of tests that were completed on this project before release.
-- A test of regression was completed.
+    - A test of regression was completed.
 
 ## License Used in this project
 - MIT
@@ -35,5 +35,5 @@ Joivre Charles
 
 ## Questions
 * Please direct Questions to the following
-- https://github.com/aStemCode
+    - https://github.com/aStemCode
 
