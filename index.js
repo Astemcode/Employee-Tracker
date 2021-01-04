@@ -1,5 +1,5 @@
 const connect = require(`http`);
-const mysql = require(`mysql`);
+const sql = require(`sql`);
 const inquirer = require(`inquirer`);
 const { exit } = require("process");
 
@@ -97,32 +97,30 @@ function addEmployee(){
 }
 
 
+function addDepartment(){
+ 
+    inquirer
+    .prompt([
+      {
+        type: 'input',
+        message: "What is the new Department that you would like to add called?",
+        name: 'Name',
+      }
+])
+    .then((response) => {
+      let query = connection.query("INSERT INTO department SET ?", {
+        name: response.Name,
+      },
+      (err, res) => {
+        if(err) throw err;
+        console.log(`${res.affectedRows} Department added successfully!`);
+        
+        init();
+      })
+    })
+}
+
+
     init();
         
 
-    // const actions = [
-
-    //     {
-    //         type: "list",
-    //         name: "actions",
-    //         message: "What would you like to to?",
-    //         choices: [
-    
-    //             "Add new employee",
-    //             "View all employees",
-    //             "View employees by department",
-    //             "Update employee role",
-    //             "View all roles",
-    //             "Add role",
-    //             "View all departments",
-    //             "Add department",
-    //             "Exit"
-    
-    //         ]
-    
-    //     }
-    // ]
-    
-    
-    
-    // module.exports = { actions }
