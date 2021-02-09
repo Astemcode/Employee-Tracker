@@ -1,0 +1,25 @@
+{
+  "name": "employee-tracker",
+  "version": "1.0.0",
+  "description": "Employee Tracker",
+  "main": "index.js",
+  "dependencies": {
+    "inquirer": "^7.3.3",
+    "mysql": "^2.18.1",
+    "sql": "^0.78.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Astemcode/Employee-Tracker.git"
+  },
+  "author": "Jo Charles",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Astemcode/Employee-Tracker/issues"
+  },
+  "homepage": "https://github.com/Astemcode/Employee-Tracker#readme"
+}

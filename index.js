@@ -1,5 +1,5 @@
 const connect = require(`http`);
-const sql = require(`sql`);
+const mysql = require(`mysql`);
 const inquirer = require(`inquirer`);
 const { exit } = require("process");
 
@@ -7,7 +7,7 @@ let connection = mysql.createConnection({
     host: `localhost`,
     port: 3306,
     user: `root`,
-    password: `employees`,
+    password: `rootpass`,
     database: `employee_db`
 })
 
