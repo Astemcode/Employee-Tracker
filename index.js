@@ -57,7 +57,6 @@ function init() {
     }
     
 function addEmployee(){
-
     inquirer
     .prompt([
         {
@@ -98,7 +97,6 @@ function addEmployee(){
 
 
 function addDepartment(){
- 
     inquirer
     .prompt([
       {
@@ -120,6 +118,98 @@ function addDepartment(){
     })
 }
 
+function addRole(){
+  inquirer
+  .prompt([
+    {
+      type: 'input',
+      message: 'What is the Title of the new role that you would like to add?',
+      name: 'Title',
+    },
+    {
+      type: 'input',
+      message: 'What is the Salary of the new role that you would like to add?',
+      name: 'Salary',
+    },
+    {
+      type: 'input',
+      message: 'What is the department_id of the new role that you would like to add?',
+      name: 'department_id',
+    }
+])
+  .then((response) => {
+    let query = connection.query("INSERT INTO role SET ?", {
+      title: response.Title,
+      salary:response.Salary,
+      department_id: response.department_id
+    },
+    (err, res) => {
+      if(err) throw err;
+      console.log(`${res.affectedRows} Department added`);
+      init();
+    })
+  })
+
+}
+
+function viewDepartments(){
+  let query = connection.query("SELECT * FROM department", 
+  (err, res) => {
+    if(err) throw err;
+    console.table(res);
+    init();
+  })
+}
+
+function viewRoles(){
+  let query = connection.query("SELECT * FROM role", 
+  (err, res) => {
+    if(err) throw err;
+    console.table(res);
+    init();
+  })
+}
+
+function viewEmployees(){
+  let query = connection.query("SELECT * FROM employee", 
+  (err, res) => {
+    if(err) throw err;
+    console.table(res);
+    init();
+  })
+}
+
+function updateRole(){
+  inquirer
+  .prompt([
+    {
+      type: 'input',
+      message: "Which Employee (ID#) would you like to change the role of? ",
+      name: 'EmpID',
+    },
+    {
+      type: 'input',
+      message: 'Which role would you like them to hold?',
+      name: 'Role',
+    }
+])
+  .then((response) => {
+    let query = connection.query("UPDATE employee SET ? WHERE ?", [
+      {role_id: response.Role},
+      {id:response.EmpID}
+    ],
+    (err, res) => {
+      if(err) throw err;
+      console.log(`${res.affectedRows} Role Changed`);
+      init();
+    })
+  })
+
+}
+
+function exit(){
+  console.log("Thanks for using CMS model no. 9001")
+}
 
     init();
         

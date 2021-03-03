@@ -26,3 +26,21 @@ FOREIGN KEY (manager_id) REFERENCES employee (id),
 FOREIGN KEY(role_id) REFERENCES role (id)
 );
 
+INSERT INTO department (name) 
+VALUES ("Sales"), ("Engineering"),("Legal"), ("Finance"),("Marketing");
+
+INSERT INTO role (title, salary, department_id)
+VALUES ("Sales Lead", 60000 ,1),  
+("Developer", 80000,2),
+("CFO", 100000, 3),
+("Day Watcher",75000,4),
+("Sales Rep", 30000 ,1),
+("Senior Developer", 95000,2),
+("Accountant", 90000, 3);
+
+INSERT INTO employee (first_name, last_name, role_id,manager_id)
+VALUES ("Nina", "Simone", 1,1),
+("Richard", "Philip", 2,1),
+("Angie", "Milandro",3,2),
+("Monica","Wynter",4,3);
+
