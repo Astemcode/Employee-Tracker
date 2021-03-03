@@ -207,9 +207,9 @@ function updateRole(){
 
 }
 
-function exit(){
-  console.log("Thanks for using CMS model no. 9001")
-}
+// function exit(){
+//   console.log("Thanks for using CMS model no. 9001")
+// }
 
     init();
         
